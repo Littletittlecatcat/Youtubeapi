@@ -1,0 +1,19 @@
+import React from 'react';
+import './VideoItems.css';
+
+const VideoItems = ({ video, onVideoSelected }) => {
+    return (
+        <div onClick={() => onVideoSelected(video)} className="video-item item">
+            <img
+                alt={video.snippet.title}
+                className="ui image"
+                src={video.snippet.thumbnails.medium.url}
+            ></img>
+            <div className="content">
+                <div className="header">{video.snippet.title}</div>
+            </div>
+        </div>
+    );
+};
+
+export default VideoItems;
